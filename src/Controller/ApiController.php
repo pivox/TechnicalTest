@@ -46,7 +46,6 @@ class ApiController extends AbstractController
                 return $this->json([], 200);
             }
             else {
-                $logger->critical(json_encode($form->getExtraData()));
                 $logger->error($form->getErrors(true, false));
                 return $this->json(['errors' => $this->getErrorsFromForm($form)], 400);
             }
@@ -56,6 +55,10 @@ class ApiController extends AbstractController
     }
 
 
+    /**
+     * @param FormInterface $form
+     * @return array
+     */
     private function getErrorsFromForm(FormInterface $form)
     {
         $formErrorIterator = $form->getErrors(true, false)->getChildren();
