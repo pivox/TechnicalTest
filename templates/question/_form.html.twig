@@ -1,0 +1,7 @@
+{{ form_start(form) }}
+    <div>{{ form_row(form.title) }}</div>
+    <div>{{ form_row(form.promoted) }}</div>
+    <div>{{ form_row(form.status) }}</div>
+    <div>{{ form_row(form.answers) }}</div>
+    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}
