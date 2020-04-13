@@ -21,7 +21,7 @@ class InitProjectCommand extends Command
         ;
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output): int
+    protected function execute(InputInterface $input, OutputInterface $output): void
     {
         $io = new SymfonyStyle($input, $output);
         $io->writeln("Initilizing project on process");
@@ -34,23 +34,17 @@ class InitProjectCommand extends Command
         $commandInput  = new ArrayInput(["-n" => true]);
         $returnCode = $command->run($commandInput, $output);
 
-        $command = $this->getApplication()->find('doctrine:schema:update');
-        $commandInput  = new ArrayInput([
-            'command' => 'doctrine:schema:update',
-            "--force" => true
-        ]);
+        $command = $this->getApplication()->find('doctrine:migration:migrate');
+        $commandInput  = new ArrayInput([]);
+        $commandInput->setInteractive(false);
         $returnCode = $command->run($commandInput, $output);
 
         $command = $this->getApplication()->find('doctrine:fixtures:load');
-        $commandInput  = new ArrayInput([
-            'command' => 'doctrine:fixtures:load',
-            "--purge-with-truncate" => true,
-            "--no-interaction" => true,
-        ]);
+        $commandInput  = new ArrayInput([]);
+        $commandInput->setInteractive(false);
         $returnCode = $command->run($commandInput, $output);
 
         $io->success('You have a new command! Now make it your own! Pass --help to see your options.');
 
-        return 0;
     }
 }
