@@ -33,14 +33,6 @@ class ApiQuestionType extends AbstractType
                 'by_reference' => false
             ])
         ;
-//        $builder->get('updated')->addModelTransformer(new CallbackTransformer(
-//            function ($dateAsString) {
-//                 return \DateTime::createFromFormat('Y-m-d H:i:s', $dateAsString);
-//            },
-//            function (\DateTime $date) {
-//                return $date->format("Y-m-d H:i:s");
-//            }
-//        ));
     }
 
     public function configureOptions(OptionsResolver $resolver)
