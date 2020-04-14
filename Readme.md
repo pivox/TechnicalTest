@@ -7,6 +7,7 @@
 ## Without docker
 ### Install 
 * `composer install` 
+* setting database params under ./env and under config/packages/doctrine.yaml
 ### To init the project (database + schemas + datas), please run 
 `docker exec -ti sf-console php bin/console init-project`
 
