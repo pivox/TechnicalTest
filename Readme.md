@@ -1,8 +1,14 @@
 # technicalTest
-## Install 
-* `composer install` 
-##### To init the project (database + schemas + datas), please run 
+## With docker
+
+### To init the project (database + schemas + datas), please run 
 `php bin/console  init-project`
+
+## Without docker
+### Install 
+* `composer install` 
+### To init the project (database + schemas + datas), please run 
+`docker exec -ti sf-console php bin/console init-project`
 
 ##### Availables routes are
  - /answer/list
