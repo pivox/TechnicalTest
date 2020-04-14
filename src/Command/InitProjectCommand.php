@@ -44,7 +44,7 @@ class InitProjectCommand extends Command
         $commandInput->setInteractive(false);
         $returnCode = $command->run($commandInput, $output);
 
-        $io->success('You have a new command! Now make it your own! Pass --help to see your options.');
+        $io->success('Project successely initilized');
 
     }
 }
