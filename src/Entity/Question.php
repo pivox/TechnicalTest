@@ -31,8 +31,7 @@ class Question
     private $title;
 
     /**
-     * @ORM\Column(type="boolean")
-     * @Assert\NotNull()
+     * @ORM\Column(type="boolean", nullable=true)
      */
     private $promoted;
 

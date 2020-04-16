@@ -24,7 +24,7 @@ class InitProjectCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output): void
     {
         $io = new SymfonyStyle($input, $output);
-        $io->writeln("Initilizing project on process");
+        $io->writeln("Initiating project on process");
 
         $command = $this->getApplication()->find('doctrine:database:drop');
         $commandInput  = new ArrayInput(["--force" => true, '--if-exists' => true]);
@@ -44,7 +44,7 @@ class InitProjectCommand extends Command
         $commandInput->setInteractive(false);
         $returnCode = $command->run($commandInput, $output);
 
-        $io->success('You have a new command! Now make it your own! Pass --help to see your options.');
+        $io->success('the project is successfully initiated');
 
     }
 }
