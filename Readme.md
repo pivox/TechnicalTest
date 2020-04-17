@@ -8,7 +8,7 @@
 
 Access to the page web with: https://127.0.0.1:8000 
 ### Unit tests 
- > bin/phpunit -v
+ > vendor/bin/simple-phpunit
 
 ## Without docker
 ### Install  
@@ -18,7 +18,7 @@ Access to the page web with: https://127.0.0.1:8000
  Access to the page web with: https://127.0.0.1:8888
 
 ### Unit tests 
-*  > `docker exec -ti sf-console bin/phpunit -v`
+*  > ` docker exec -ti sf-console vendor/bin/simple-phpunit`
  
 ## Availables routes are:
  - /answer/list
