@@ -12,7 +12,7 @@ use App\Validator\Constraints as AppAssert;
  * @ORM\Entity(repositoryClass="App\Repository\QuestionRepository")
  * @ORM\HasLifecycleCallbacks()
  */
-class Question
+class Question implements \JsonSerializable
 {
     const STATUS_DRAFT = 'draft';
     const STATUS_PUBLISHED = 'published';
@@ -53,7 +53,7 @@ class Question
     private $status;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Answer", mappedBy="question", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="App\Entity\Answer", mappedBy="question", orphanRemoval=true, fetch="EAGER")
      */
     private $answers;
 
@@ -168,5 +168,17 @@ class Question
     public function setCreatedValue()
     {
         $this->created = new \DateTime();
+    }
+
+    public function jsonSerialize()
+    {
+        return [
+            'id' => $this->id,
+            'title' => $this->title,
+            'promoted' => $this->promoted,
+            'status' => $this->status,
+            'answers' => $this->answers,
+        ];
+
     }
 }

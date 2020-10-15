@@ -37,7 +37,7 @@ class QuestionSubscriber implements EventSubscriber
             $questionHistoric = $this->setStatus($questionHistoric, $args);
             $questionHistoric->setQuestion($args->getObject());
             $args->getEntityManager()->persist($questionHistoric);
-            $args->getEntityManager()->flush($questionHistoric);
+            $args->getEntityManager()->flush();
         }
     }
 

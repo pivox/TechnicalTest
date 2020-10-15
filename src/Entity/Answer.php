@@ -9,7 +9,7 @@ use App\Validator\Constraints as AppAssert;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\AnswerRepository")
  */
-class Answer
+class Answer implements \JsonSerializable
 {
     const CHANNEL_FAQ = 'faq';
     const CHANNEL_BOT = 'bot';
@@ -79,5 +79,14 @@ class Answer
         $this->question = $question;
 
         return $this;
+    }
+
+    public function jsonSerialize()
+    {
+        return [
+          'id' => $this->id,
+          'body' => $this->body,
+          'channel' => $this->channel,
+        ];
     }
 }
