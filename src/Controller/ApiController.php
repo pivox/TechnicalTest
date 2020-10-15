@@ -17,7 +17,7 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
  */
 class ApiController extends AbstractController
 {
-
+  
 
     /**
      * @Route("/", name="questions", methods={"GET"})
