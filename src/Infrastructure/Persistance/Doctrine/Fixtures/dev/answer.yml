@@ -1,0 +1,37 @@
+App\Domain\Question\Model\Answer:
+  answer_{1..5}:
+    __construct:
+      id: answer_<current()>
+      channel: !php/const App\Domain\Question\Model\Answer::CHANNEL_FAQ
+      body: body_<current()>
+    question: '@question_1'
+  answer_{6..8}:
+    __construct:
+      id: answer_<current()>
+      channel: !php/const App\Domain\Question\Model\Answer::CHANNEL_FAQ
+      body: body_<current()>
+    question: '@question_2'
+  answer_{9..11}:
+    __construct:
+      id: answer_<current()>
+      channel: !php/const App\Domain\Question\Model\Answer::CHANNEL_FAQ
+      body: body_<current()>
+    question: '@question_3'
+  answer_{12..13}:
+    __construct:
+      id: answer_<current()>
+      channel: !php/const App\Domain\Question\Model\Answer::CHANNEL_BOT
+      body: body_<current()>
+    question: '@question_4'
+  answer_{14..17}:
+    __construct:
+      id: answer_<current()>
+      channel: !php/const App\Domain\Question\Model\Answer::CHANNEL_BOT
+      body: body_<current()>
+    question: '@question_5'
+  answer_{18..20}:
+    __construct:
+      id: answer_<current()>
+      channel: !php/const App\Domain\Question\Model\Answer::CHANNEL_BOT
+      body: body_<current()>
+    question: '@question_6'

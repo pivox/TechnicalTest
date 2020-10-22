@@ -11,4 +11,11 @@
 
     {{ include('question/_delete_form.html.twig') }}
 {% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script type="application/javascript">
+        {{ include('question/_form.js.twig') }}
+    </script>
+{% endblock %}
+
 

@@ -1,0 +1,44 @@
+App\Domain\Question\Model\Question:
+  question_1:
+    __construct:
+      id: question_1
+      title: title_1
+      promoted: false
+      status: !php/const App\Domain\Question\Model\Question::STATUS_DRAFT
+      
+  question_2:
+    __construct:
+      id: question_2
+      title: title_2
+      promoted: false
+      status: !php/const App\Domain\Question\Model\Question::STATUS_PUBLISHED
+      
+  question_3:
+    __construct:
+      id: question_3
+      title: title_3
+      promoted: false
+      status: !php/const App\Domain\Question\Model\Question::STATUS_DRAFT
+      
+  question_4:
+    __construct:
+      id: question_4
+      title: title_4
+      promoted: true
+      status: !php/const App\Domain\Question\Model\Question::STATUS_PUBLISHED
+      
+  question_5:
+    __construct:
+      id: question_5
+      title: title_5
+      promoted: true
+      status: !php/const App\Domain\Question\Model\Question::STATUS_PUBLISHED
+      
+  question_6:
+    __construct:
+      id: question_6
+      title: title_6
+      promoted: true
+      status: !php/const App\Domain\Question\Model\Question::STATUS_DRAFT
+
+

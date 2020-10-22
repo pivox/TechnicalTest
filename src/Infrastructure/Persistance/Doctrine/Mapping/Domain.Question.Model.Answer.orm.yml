@@ -1,0 +1,21 @@
+App\Domain\Question\Model\Answer:
+  type: entity
+  repositoryClass: App\Infrastructure\Persistance\Doctrine\Repository\Question\AnswersRepository
+  id:
+    id:
+      type: string
+      generator:
+        strategy: UUID
+  fields:
+    channel:
+      type: string
+      length: 100
+      nullable: false
+    body:
+      type: string
+      nullable: true
+  manyToOne:
+    question:
+      targetEntity: App\Domain\Question\Model\Question
+      cascade: ["persist"]
+      inversedBy: answers

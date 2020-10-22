@@ -1,0 +1,42 @@
+App\Domain\Question\Model\QuestionHistoric:
+  type: entity
+  repositoryClass: App\Infrastructure\Persistance\Doctrine\Repository\Question\QuestionHistoric
+  id:
+    id:
+      type: string
+      generator:
+        strategy: UUID
+  fields:
+    oldTitle:
+      type: string
+      length: 100
+      nullable: true
+    newTitle:
+      type: string
+      length: 100
+      nullable: true
+    oldPromoted:
+      type: boolean
+      nullable: true
+    newPromoted:
+      type: boolean
+      nullable: true
+    oldStatus:
+      type: string
+      length: 100
+      nullable: true
+    newStatus:
+      type: string
+      length: 100
+      nullable: true
+    oldUpdated:
+      type: datetime
+      nullable: true
+    newUpdated:
+      type: datetime
+      nullable: true
+  manyToOne:
+    question:
+      targetEntity: App\Domain\Question\Model\Question
+      joinColumn:
+        nullable: false

@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Question {{ question.id }}{% endblock %}
+
+{% block body %}
+    <h1>Question {{ question.id }}</h1>
+    <table class="table">
+        <tr>
+            <th>Id</th>
+            <td>{{ question.id }}</td>
+        </tr>
+        <tr>
+            <th>Title</th>
+            <td>{{ question.title }}</td>
+        </tr>
+        <tr>
+            <th>Promoted</th>
+            <td>{{ question.promoted  ? 'Oui': 'Non'}}</td>
+        </tr>
+        <tr>
+            <th>Created</th>
+            <td>{{ question.created ? question.created|date('Y-m-d H:i:s') : ''  }}</td>
+        </tr>
+        <tr>
+            <th>Status</th>
+            <td>{{ question.updated ? question.updated|date('Y-m-d H:i:s') : '' }}</td>
+        </tr>
+        <tr>
+            <th>Answers</th>
+            <td>{{ question.status }}</td>
+        </tr>
+        <tr>
+            <table>
+                <thead>
+                <th>Id answer</th>
+                <th>Answer's channel</th>
+                <th>Answer's body</th>
+                </thead>
+                <tbody>
+                {% if question.answers|length > 0 %}
+                    {% for answer in  question.answers %}
+                        <tr>
+                            <td>{{ answer.id }}</td>
+                            <td>{{ answer.channel }}</td>
+                            <td>{{ answer.body }}</td>
+                        </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="7">no records found</td>
+                    </tr>
+                {% endif %}
+                </tbody>
+            </table>
+    <br/>
+    <a href="{{ path('question_update', {'id': question.id}) }}">edit</a>
+{% endblock %}

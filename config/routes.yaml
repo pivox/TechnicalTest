@@ -1,3 +1,34 @@
-index:
-    path: /
-    controller: App\Controller\QuestionController::index
+question_list:
+    path: /question/list
+    controller: App\Infrastructure\UserInterface\Html\ListQuestionsController
+
+question_create:
+    path: /question/create
+    controller: App\Infrastructure\UserInterface\Html\CreateQuestionController
+
+question_update:
+    path: /question/update/{id}/
+    controller: App\Infrastructure\UserInterface\Html\UpdateQuestionController
+
+question_detail:
+    path: /question/detail/{id}/
+    controller: App\Infrastructure\UserInterface\Html\DetailQuestionController
+
+question_api_list:
+    path: /api/question/
+    controller: App\Infrastructure\UserInterface\Api\ListQuestionsController
+
+question_api_detail:
+    path: /api/question/{id}
+    controller: App\Infrastructure\UserInterface\Api\DetailQuestionController
+    methods: [GET]
+
+question_api_update:
+    path: /api/question/{id}
+    controller: App\Infrastructure\UserInterface\Api\UpdateQuestionController
+    methods: [PUT]
+
+
+#question_delete:
+#    path: /question/delete/{id}/
+#    controller: App\Infrastructure\UserInterface\Html\DeleteQuestionController

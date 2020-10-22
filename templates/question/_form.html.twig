@@ -2,6 +2,13 @@
     <div>{{ form_row(form.title) }}</div>
     <div>{{ form_row(form.promoted) }}</div>
     <div>{{ form_row(form.status) }}</div>
-    <div>{{ form_row(form.answers) }}</div>
+    <div>
+        <h3>Answers</h3>
+        <ul class="answers" data-prototype="{{ form_widget(form.answers.vars.prototype)|e('html_attr') }}">
+            {% for form_answer in form.answers %}
+                <li>{{ form_row(form_answer) }}</li>
+            {% endfor %}
+        </ul>
+    </div>
     <button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}

@@ -1,0 +1,7 @@
+App\Domain\Question\Model\Question:
+  properties:
+    title:
+      - NotNull: ~
+    status:
+      - NotNull: ~
+      - App\Infrastructure\Validator\Constraints\Question\QuestionStatus: ~

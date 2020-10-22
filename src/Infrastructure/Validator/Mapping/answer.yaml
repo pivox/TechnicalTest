@@ -1,0 +1,7 @@
+App\Domain\Question\Model\Answer:
+  properties:
+    channel:
+      - NotNull: ~
+      - App\Infrastructure\Validator\Constraints\Question\AnswerChannel: ~
+    body:
+      - NotNull: ~

@@ -1,0 +1,16 @@
+parameters:
+    app.alice_fixtures_path: src/Infrastructure/Persistance/Doctrine/Fixtures
+
+hautelook_alice:
+    fixtures_path: '%app.alice_fixtures_path%'
+    root_dirs:
+        - '%kernel.root_dir%'
+        - '%kernel.project_dir%'
+services:
+    Nelmio\Alice\PropertyAccess\ReflectionPropertyAccessor:
+        class: Nelmio\Alice\PropertyAccess\ReflectionPropertyAccessor
+        public: false
+        decorates: nelmio_alice.property_accessor
+        decoration_priority: -10
+        arguments: ['@Nelmio\Alice\PropertyAccess\ReflectionPropertyAccessor.inner']
+

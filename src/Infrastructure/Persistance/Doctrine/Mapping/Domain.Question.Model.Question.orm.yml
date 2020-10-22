@@ -1,0 +1,32 @@
+App\Domain\Question\Model\Question:
+  type: entity
+  repositoryClass: App\Infrastructure\Persistance\Doctrine\Repository\Question\QuestionRepository
+  id:
+    id:
+      type: string
+      generator:
+        strategy: UUID
+  fields:
+    title:
+      type: string
+      length: 100
+    promoted:
+      type: boolean
+      nullable: false
+    status:
+      type: string
+      length: 100
+      nullable: false
+    created:
+      type: datetime
+      nullable: false
+    updated:
+      type: datetime
+      nullable: false
+  oneToMany:
+    answers:
+      targetEntity: App\Domain\Question\Model\Answer
+      mappedBy: question
+      cascade: ["persist"]
+      fetch: EAGER
+      orphanRemoval: true
